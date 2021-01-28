@@ -4,12 +4,12 @@ col_gray1="#2e3440"
 col_gray2="#444444"
 col_gray3="#bbbbbb"
 col_gray4="#4c566a"
-col_cyan="#81a1c1"
+col_red="#BF616A"
 
 
 termcmd="alacritty -e" 
 test -s $HOME/.dmenurc && . $HOME/.dmenurc 
-cmd="$(dmenu_path | dmenu -nb $col_gray1 -nf $col_gray3 -sb $col_cyan -sf $col_gray4 -p "Run " -l 10 $@)" 
+cmd="$(dmenu_path | dmenu -nb $col_gray1 -nf $col_gray3 -sb $col_red -sf $col_gray4 -p "Run " -l 10 $@)" 
 case $cmd in 
 	#\@* ) brave-browser "https://www.google.com/search?q=$(echo $cmd | cut -d'@' -f2)";; 
 	#\!* ) ${termcmd} "$(printf "%s" "${cmd}" | cut -d'!' -f2)";; 
