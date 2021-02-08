@@ -9,7 +9,7 @@ col_red="#BF616A"
 
 termcmd="alacritty -e" 
 test -s $HOME/.dmenurc && . $HOME/.dmenurc 
-cmd="$(dmenu_path | dmenu -nb $col_gray1 -nf $col_gray3 -sb $col_red -sf $col_gray4 -p "Run λ" -l 10 $@)" 
+cmd="$(dmenu_path | dmenu -m -1 -nb $col_gray1 -nf $col_gray3 -sb $col_red -sf $col_gray4 -p "Run λ" -l 10 $@)" 
 case $cmd in 
 	*\@ ) brave-browser "https://www.google.com/search?q=$(echo $cmd | sed 's/\(.*\)@/\1 /')";;
     *\! ) ${termcmd} "$(printf "%s" "${cmd}" | cut -d'!' -f1)";;
